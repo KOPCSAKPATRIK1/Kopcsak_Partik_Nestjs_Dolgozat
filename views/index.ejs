@@ -21,15 +21,17 @@
       <th>Súly</th>
       <th>Szem Szín</th>
     </tr>
-
       <% for (let m of macskak) {%> 
         <tr>
           <td><%= m.suly %></td>
           <td><%= m.szem_szin %></td>
         </tr>
       <% } %> 
-
   </table>
+
+  <form action="/macskak/new" method="get">
+    <input type="submit" value="Macska Hozzáadás">
+  </form>
 
 </body>
 </html>
