@@ -9,7 +9,9 @@ export class AppController {
   @Get()
   @Render('index')
   async index() {
-    const [rows] = await db.execute('select * from macskak');
+    const [rows] = await db.execute(
+      'select * from macskak order by macskak.suly desc',
+    );
     return {
       macskak: rows,
     };

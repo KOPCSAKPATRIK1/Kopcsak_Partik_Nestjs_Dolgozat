@@ -9,10 +9,20 @@
     <script src='main.js'></script>
 </head>
 <body>
-    <ul>
+  <table>
+    <tr>
+      <th>Súly</th>
+      <th>Szem Szín</th>
+    </tr>
+
       <% for (let m of macskak) {%> 
-          <li><%= m.suly %></li>
+        <tr>
+          <td><%= m.suly %></td>
+          <td><%= m.szem_szin %></td>
+        </tr>
       <% } %> 
-    </ul>
+
+  </table>
+
 </body>
 </html>
