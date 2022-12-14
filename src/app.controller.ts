@@ -1,9 +1,12 @@
 import { Query } from '@nestjs/common';
 import { Param } from '@nestjs/common';
 import { Post } from '@nestjs/common';
+import { Body } from '@nestjs/common';
+import { Redirect } from '@nestjs/common';
 import { Controller, Get, Render } from '@nestjs/common';
 import { AppService } from './app.service';
 import db from './db';
+import { UjMacskaDto } from './UjMacskaDto.dto';
 
 @Controller()
 export class AppController {
@@ -28,5 +31,21 @@ export class AppController {
         macskak: rows,
       };
     }
+  }
+
+  @Get('macskak/new')
+  @Render('macskaAdd')
+  ujMacskaOldal() {
+    return {};
+  }
+
+  @Post('macskak/new')
+  @Redirect()
+  async ujMacska(@Body() macska: UjMacskaDto){
+    const []: any = await db.execute(
+      'insert into  `macskak` (`suly`,`szem_szin`) VALUES (?, ?)',
+      [macska.suly, macska.szemszin],
+    );
+    return { url: '/' };
   }
 }

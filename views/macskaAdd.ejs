@@ -7,15 +7,15 @@
   <title>Macska Hozzáad</title>
 </head>
 <body>
-  <form method="post">
-    <p>Súly: <input type="number" name="suly" required /></p>
-    <p>Szem szín: <input type="text" name="szemszin" required /></p>
-    <p>
-      <input type="submit" value="Hozzáad" />    
-    </p>
-  </form>
-  <form action="/">
-    <input type="submit" value="Mégse" />
-  </form>
+  <center>
+    <form method="post">
+      <p>Súly: <input type="number" name="suly" required min="1"/></p>
+      <p>Szem szín: <input type="text" name="szemszin" required /></p>    
+      <input type="submit" value="Hozzáad" />        
+    </form>
+    <form action="/">
+      <input type="submit" value="Mégse" />
+    </form>
+  </center>
 </body>
 </html>
